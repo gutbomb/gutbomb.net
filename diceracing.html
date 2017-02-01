@@ -1,0 +1,69 @@
+
+<html>
+	<head>
+		<title>Rainwave's Forza 6 Dice Racing (Powered by GutBomb)</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var tracks = [ "Bernie", "Indy", "Laguna", "RdAtlanta", "Sebring", "Silverstone", "TopGear", "Catalunya", "LeMans", "Bathurst", "Spa", "Prague", "AbuDhabi", "Nurburgring", "LongBeach", "RdAmerica", "LimeRock", "BrandsHatch", "COTA", "Daytona", "Hockenheim", "Monza", "Rio", "Sonoma", "WatkinsGlen" ];
+
+			var layouts = {
+				"Bernie": [ "Festival", "Festival Reverse", "Stadtplatz", "Stadtplatz Reverse", "Club", "Club Reverse" ],
+				"Indy": [ "Grand Prix", "Oval", "GP Classic", "GP Alt" ],
+				"Laguna": [ "Full" ],
+				"RdAtlanta": [ "Full", "Club" ],
+				"Sebring": [ "Full", "Short", "Club", "Full Rain", "Short Rain", "Club Rain", "Full Night", "Short Night", "Club Night" ],
+				"Silverstone": [ "Grand Prix", "International", "National", "Grand Prix Rain", "International Rain", "National Rain" ],
+				"TopGear": [ "Full", "East", "West", "Outer", "East Reverse", "West Reverse", "Outer Reverse", "Full Rain", "East Rain", "West Rain", "Outer Rain", "East Reverse Rain", "West Reverse Rain", "Outer Reverse Rain" ],
+				"Catalunya": [ "Grand Prix", "National", "School" ],
+				"LeMans": [ "Full", "FullNoChicane", "Bugatti", "Full Night", "Full Rain", "Bugatti Night", "Bugatti Rain", "FullNoChicane Rain", "FullNoChicane Night" ],
+				"Bathurst": [ "Full" ],
+				"Spa": [ "Full", "Full Rain", "Full Night" ],
+				"Prague": [ "Full", "Short", "Full Reverse", "Short Reverse" ],
+				"AbuDhabi": [ "Full", "North", "South", "Corkscrew", "Full Night", "North Night", "South Night", "Corkscrew Night" ],
+				"Nurburgring": [ "Nordschliefe", "24 Hour", "GP", "Nordschliefe Night", "24 Hour Night", "GP Night", "Nordschliefe Rain", "24 Hour Rain", "GP Rain" ],
+				"LongBeach": [ "Full", "East", "West" ],
+				"RoadAmerica": [ "Full", "Alt", "East", "West", "WestAlt"],
+				"LimeRock": [ "Full", "West Chicane", "South Chicane", "Full Alt" ],
+				"BrandsHatch": [ "GP", "GP Rain", "Indy", "Indy Rain" ],
+				"COTA": [ "Full", "East", "West" ],
+				"Daytona": [ "Sports Car", "Sports Car Night", "Short", "Short Night", "Oval", "Oval Night" ],
+				"Hockenheim": [ "Full", "National", "Short" ],
+				"Monza": [ "Full", "Short", "FullAlt" ],
+				"Rio": [ "Full", "Full Reverse", "National", "National Reverse", "Coast Loop", "Coast Loop Reverse", "Mountain Circuit", "Mountain Circuit Reverse", "Mini Circuit", "Mini Circuit Reverse" ],
+				"Sonoma": [ "Full", "GP", "Short" ],
+				"WatkinsGlen": [ "Full", "Short", "Full Alt", "Short Alt" ]
+			};
+			var classes = [ "E", "D", "C", "B", "A", "S", "R", "P", "X" ];
+
+			function randomperson() {
+				document.getElementById("dice").innerHTML = Math.ceil(Math.random() * document.getElementById("numplayers").value);
+			}
+
+			function randomtrack() {
+				var t = tracks[Math.floor(Math.random() * tracks.length)];
+				var l = layouts[t][Math.floor(Math.random() * layouts[t].length)];
+				document.getElementById("track").innerHTML = t;
+				document.getElementById("layout").innerHTML = l;
+			}
+
+			function randomclass() {
+				document.getElementById("class").innerHTML = classes[Math.floor(Math.random() * classes.length)];
+			}
+
+			function randomgoodclass() {
+				document.getElementById("class").innerHTML = classes[Math.floor(Math.random() * 6)];
+			}
+		</script>
+		<h1>Dice Racing Made Easy</h1>
+		<div>Number of players: <input id="numplayers" type="text"></div>
+		<div id="dice">[ Player # ]</div>
+		<div><button onclick='randomperson();'>Who's the lucky winner?!</button></div>
+		<div id="track">[ Track ]</div>
+		<div id="layout">[ Layout ]</div>
+		<div><button onclick='randomtrack();'>Random track time!</button></div>
+		<div id="class">[ Class ]</div>
+		<div><button onclick='randomclass();'>Random class E to X</button></div>
+		<div><button onclick='randomgoodclass();'>Random class E to S</button></div>
+	</body>
+</html>
