@@ -1,0 +1,22 @@
+{
+  "name": "gutbomb.net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gutbomb:17psaVLwa2lO@github.com/gutbomb/gutbomb.net.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gutbomb/gutbomb.net/issues"
+  },
+  "homepage": "https://github.com/gutbomb/gutbomb.net#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

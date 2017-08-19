@@ -3,3 +3,4 @@ update-git.php
 .idea/
 gutbomb.net.iml
 .git/
+node_modules/
