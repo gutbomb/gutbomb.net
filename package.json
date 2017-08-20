@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/gutbomb/gutbomb.net#readme",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
+    "bootstrap": "^3.3.7"
   }
 }
