@@ -1,5 +1,20 @@
+body {
+    color: #FBA706;
+    background-color: black;
+}
 section {
     padding-bottom: 40px;
+}
+
+a.list-group-item {
+    background-color: black;
+    color: white;
+    border: 1px solid #FBA706;
+}
+
+a.list-group-item:hover {
+    background-color: #FBA706;
+    color: black;
 }
 
 /* Responsive: Portrait tablets and up */
