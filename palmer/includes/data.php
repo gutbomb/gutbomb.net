@@ -1,2 +1,0 @@
-2003-2009 American Housing Survey (AHS) public-use microdata files in Stata format: flattened using AHS-provided SAS code and XPT files (both publicly available from HUD&nbsp;<a title="here" href="http://www.huduser.org/portal/datasets/ahs.html" target="_blank">here</a>)&nbsp;and saved as Stata data files in <a href="AHS_2003-2009_stata.zip">this 127 MB zip file</a>.<br><br>
-The 2011 flat file is available in SAS format from the Census Department Website <a href="http://www.census.gov/programs-surveys/ahs/data/2011/ahs-national-and-metropolitan-puf-microdata.html">here</a>.
