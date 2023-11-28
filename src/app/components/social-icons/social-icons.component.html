@@ -1,10 +1,4 @@
 <ul class="social-icons">
   <!-- Social media icons list -->
-  <li><div class="icon-wrapper"><fa-icon [icon]="['fab', 'twitter']"></fa-icon></div> <a href="https://twitter.com/gutbomb" target="_blank">&#64;gutbomb</a></li>
-  <li><div class="icon-wrapper"><fa-icon [icon]="['fab', 'mastodon']"></fa-icon></div> <a href="https://bitbang.social/@gutbomb" target="_blank">&#64;gutbomb&#64;bitbang.social</a></li>
-  <li><div class="icon-wrapper"><fa-icon [icon]="['fas', 'cloud']"></fa-icon></div> <a href="https://bsky.app/profile/gutbomb.bsky.social" target="_blank">&#64;gutbomb</a></li>
-  <li><div class="icon-wrapper"><fa-icon [icon]="['fab', 'instagram']"></fa-icon></div> <a href="https://instagram.com/gutbomb303" target="_blank">&#64;gutbomb303</a></li>
-  <li><div class="icon-wrapper"><fa-icon [icon]="['fab', 'youtube']"></fa-icon></div> <a href="https://youtube.com/@GutBombTech" target="_blank">&#64;GutBombTech</a></li>
-  <li><div class="icon-wrapper"><fa-icon [icon]="['fas', 'cube']"></fa-icon></div> <a href="https://printables.com/@GutBomb_287681" target="_blank">&#64;GutBomb_287681</a></li>
-  <li><div class="icon-wrapper"><fa-icon [icon]="['fab',  'github']"></fa-icon></div> <a href="https://github.com/gutbomb" target="_blank">gutbomb</a></li>
+  <li *ngFor="let socialIcon of socialIcons;"><div class="icon-wrapper"><fa-icon [icon]="[socialIcon.icon.library, socialIcon.icon.icon]"></fa-icon></div> <a href="{{socialIcon.url}}" target="_blank">{{socialIcon.account}}</a></li>
 </ul>

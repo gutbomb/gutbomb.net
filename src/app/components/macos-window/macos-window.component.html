@@ -7,23 +7,38 @@
       <div class="macos-title-bar-line"></div>
       <div class="macos-title-bar-line"></div>
       <div class="macos-title-bar-line"></div>
-      <div class="macos-close"><div class="macos-close-border"><div class="macos-close-inner"></div></div></div>
-      <div class="macos-title">Contact Me</div>
+      <div class="macos-close"><div class="macos-close-border"><div class="macos-close-inner" (click)="closeClick()"></div></div></div>
+      <div class="macos-title">{{windowTitle}}</div>
     </div>
   </div>
-  <div class="macos-content">
+  <div class="macos-content" *ngIf="!messageSent">
     If you would like to contact me, please send me a message in the box below.<br><br>
-    <div class="email-container"><span>Your Email Address:</span><input type="email"></div>
-    <textarea></textarea><br><br>
+    <form #f="ngForm" (ngSubmit)="send(f)">
+      <div class="email-container"><span>Your Email Address:</span><input type="email" name="emailAddress" [(ngModel)]="emailAddress" #email="ngModel" required email></div>
+      <textarea name="message" [(ngModel)]="message" required></textarea><br><br>
+      <div class="button-container">
+        <div class="spacer"></div>
+        <div class="button-border">
+          <button (click)="clear()">Clear</button>
+        </div>
+        <div class="default-border-outer">
+          <div class="default-border-inner">
+            <div class="button-border">
+              <button>Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="macos-content" *ngIf="messageSent">
+    Your message has been sent.<br><br>
     <div class="button-container">
       <div class="spacer"></div>
-      <div class="button-border">
-        <button>Clear</button>
-      </div>
       <div class="default-border-outer">
         <div class="default-border-inner">
           <div class="button-border">
-            <button>Send</button>
+            <button (click)="clear()">Send Another?</button>
           </div>
         </div>
       </div>
