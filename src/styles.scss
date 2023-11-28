@@ -1,0 +1,74 @@
+$phone: 830px;
+
+@font-face {
+  font-family: 'chicago';
+  src: url('/assets/pixChicago.woff') format('woff');
+  src: url('/assets/pixChicago.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'geneva';
+  src: url('/assets/Geneva-9.woff') format('woff');
+  src: url('/assets/Geneva-9.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 95, 0);
+  font-family: 'chicago', sans-serif;
+  color: white;
+
+  .container {
+    position: relative;
+    padding: 20px 20px 20px 40px;
+
+    @media (max-width: $phone) {
+      padding: 20px;
+    }
+
+    .content {
+      @media (max-width: 830px) {
+        padding-top: 150px; /* Adjust the top padding to create space below the image */
+      }
+
+      h1 {
+        font-size: 50px;
+
+        @media (max-width: $phone) {
+          text-align: center; /* Center the h1 on mobile */
+        }
+      }
+    }
+  }
+
+  .icon {
+    width: 600px; /* Adjust the size of the image as needed */
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 30px; /* Add margin to the bottom */
+    margin-right: 30px; /* Add margin to the right */
+    z-index: 1; /* Ensure the image is above other content */
+
+    @media (max-width: 1200px) {
+      width: 400px;
+    }
+
+    @media (max-width: $phone) {
+      width: 150px; /* Adjust the width as needed */
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%); /* Center the image on mobile */
+      margin-top: 20px;
+      right: 0;
+      bottom: auto;
+    }
+  }
+}

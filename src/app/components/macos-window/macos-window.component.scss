@@ -1,0 +1,295 @@
+$phone: 830px;
+
+.macos-window {
+  background-color: white;
+  border: 2px solid #000;
+  width: 500px; /* Adjust width as needed */
+  margin: 20px 0;
+  box-shadow: 2px 2px 0 #000;
+
+  @media (max-width: 1000px) {
+    width: 350px;
+  }
+
+  @media (max-width: $phone) {
+    width: 100%;
+    margin: 20px auto; /* Center window */
+  }
+
+  .macos-title-bar {
+    background-color: #EFEEF5;
+    min-height: 30px;
+    max-height: 30px;
+    border-left: 2px solid #D4D7E2;
+    border-top: 2px solid #D4D7E2;
+    border-right: 2px solid #B0AFC3;
+    border-bottom: 2px solid #B0AFC3;
+
+    .macos-title-bar-lines {
+      margin: 4px 0;
+      position: relative;
+
+      .macos-title-bar-line {
+        min-height: 2px;
+        width: 100%;
+        background-color: #A7A7A5;
+        margin-top: 2px;
+      }
+
+      .macos-close {
+        position: absolute;
+        top: 0;
+        left: 14px;
+        padding: 0 2px;
+        background-color: #EFEEF5;
+
+        .macos-close-border {
+          min-width: 18px;
+          min-height: 18px;
+          max-width: 18px;
+          max-height: 18px;
+          border-left: 2px solid #3E3E5B;
+          border-top: 2px solid #3E3E5B;
+          border-right: 2px solid #D6D4E9;
+          border-bottom: 2px solid #D6D4E9;
+
+          .macos-close-inner {
+            min-width: 14px;
+            min-height: 14px;
+            max-width: 14px;
+            max-height: 14px;
+            border-right: 2px solid #3E3E5B;
+            border-bottom: 2px solid #3E3E5B;
+            border-left: 2px solid #D6D4E9;
+            border-top: 2px solid #D6D4E9;
+            background-color: #AFADAF;
+
+            &:active {
+              border: 2px solid black;
+              background-color: #9d9dbe;
+              max-width: 18px;
+              max-height: 18px;
+              min-width: 18px;
+              min-height: 18px;
+              margin-left: -2px;
+              margin-top: -2px;
+            }
+          }
+        }
+      }
+
+      .macos-title {
+        color: black;
+        font-family: 'chicago', sans-serif;
+        font-size: 16px;
+        line-height: 18px;
+        padding: 2px 14px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #EFEEF5;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .macos-content {
+    padding: 20px 20px 20px 20px;
+    margin: 0;
+    border-top: 2px solid black;
+    font-family: 'geneva', sans-serif;
+    font-size: 24px;
+    color: #000;
+    word-spacing: -0.55rem;
+
+    .email-container {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: center;
+
+      span {
+        margin-right: 20px;
+      }
+
+      input {
+        border: 2px solid black;
+        flex: 1;
+        height: 24px;
+        font-size: 24px;
+        font-family: 'geneva', sans-serif;
+        word-spacing: -0.55rem;
+
+        &:focus-within, &:focus-visible {
+          outline-color: black;
+        }
+      }
+    }
+
+    textarea {
+      width: calc(100% - 8px);
+      height: 300px;
+      resize: none;
+      font-size: 24px;
+      border: 2px solid black;
+      font-family: 'geneva', sans-serif;
+      word-spacing: -0.55rem;
+
+      &:focus-within, &:focus-visible {
+        outline-color: black;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      align-items: center;
+
+      .spacer {
+        flex: 1;
+      }
+
+      .button-border {
+        background-color: black;
+        padding: 2px;
+        clip-path: polygon(
+          0px calc(100% - 6px),
+          2px calc(100% - 6px),
+          2px calc(100% - 4px),
+          4px calc(100% - 2px),
+          6px calc(100% - 2px),
+          6px 100%,
+          calc(100% - 6px) 100%,
+          calc(100% - 6px) calc(100% - 2px),
+          calc(100% - 4px) calc(100% - 2px),
+          calc(100% - 2px) calc(100% - 4px),
+          calc(100% - 2px) calc(100% - 6px),
+          100% calc(100% - 6px),
+          100% 6px,
+          calc(100% - 2px) 6px,
+          calc(100% - 2px) 4px,
+          calc(100% - 4px) 2px,
+          calc(100% - 6px) 2px,
+          calc(100% - 6px) 0px,
+          6px 0px,
+          6px 2px,
+          4px 2px,
+          2px 4px,
+          2px 6px,
+          0px 6px
+        );
+      }
+
+      button {
+        background-color: white;
+        border: none;
+        padding: 8px 40px;
+        font-family: 'chicago', sans-serif;
+        font-size: 16px;
+        line-height: 16px;
+        clip-path: polygon(
+          0px calc(100% - 4px),
+          2px calc(100% - 4px),
+          2px calc(100% - 2px),
+          4px calc(100% - 2px),
+          4px 100%,
+          calc(100% - 4px) 100%,
+          calc(100% - 4px) calc(100% - 2px),
+          calc(100% - 2px) calc(100% - 2px),
+          calc(100% - 2px) calc(100% - 4px),
+          100% calc(100% - 4px),
+          100% 4px,
+          calc(100% - 2px) 4px,
+          calc(100% - 2px) 2px,
+          calc(100% - 4px) 2px,
+          calc(100% - 4px) 0px,
+          4px 0px,
+          4px 2px,
+          2px 2px,
+          2px 4px,
+          0px 4px
+        );
+
+        &:active {
+          color: white;
+          background-color: black;
+        }
+      }
+
+      .default-border-outer {
+        margin-left: 20px;
+        background-color: black;
+        padding: 6px;
+        clip-path: polygon(
+          0px calc(100% - 10px),
+          2px calc(100% - 10px),
+          2px calc(100% - 6px),
+          4px calc(100% - 6px),
+          4px calc(100% - 4px),
+          6px calc(100% - 4px),
+          6px calc(100% - 2px),
+          10px calc(100% - 2px),
+          10px 100%,
+          calc(100% - 10px) 100%,
+          calc(100% - 10px) calc(100% - 2px),
+          calc(100% - 6px) calc(100% - 2px),
+          calc(100% - 6px) calc(100% - 4px),
+          calc(100% - 4px) calc(100% - 4px),
+          calc(100% - 4px) calc(100% - 6px),
+          calc(100% - 2px) calc(100% - 6px),
+          calc(100% - 2px) calc(100% - 10px),
+          100% calc(100% - 10px),
+          100% 10px,
+          calc(100% - 2px) 10px,
+          calc(100% - 2px) 6px,
+          calc(100% - 4px) 6px,
+          calc(100% - 4px) 4px,
+          calc(100% - 6px) 4px,
+          calc(100% - 6px) 2px,
+          calc(100% - 10px) 2px,
+          calc(100% - 10px) 0px,
+          10px 0px,
+          10px 2px,
+          6px 2px,
+          6px 4px,
+          4px 4px,
+          4px 6px,
+          2px 6px,
+          2px 10px,
+          0px 10px
+        );
+
+        .default-border-inner {
+          background-color: white;
+          padding: 2px;
+
+          clip-path: polygon(
+            0px calc(100% - 6px),
+            2px calc(100% - 6px),
+            2px calc(100% - 4px),
+            4px calc(100% - 2px),
+            6px calc(100% - 2px),
+            6px 100%,
+            calc(100% - 6px) 100%,
+            calc(100% - 6px) calc(100% - 2px),
+            calc(100% - 4px) calc(100% - 2px),
+            calc(100% - 2px) calc(100% - 4px),
+            calc(100% - 2px) calc(100% - 6px),
+            100% calc(100% - 6px),
+            100% 6px,
+            calc(100% - 2px) 6px,
+            calc(100% - 2px) 4px,
+            calc(100% - 4px) 2px,
+            calc(100% - 6px) 2px,
+            calc(100% - 6px) 0px,
+            6px 0px,
+            6px 2px,
+            4px 2px,
+            2px 4px,
+            2px 6px,
+            0px 6px
+          );
+        }
+      }
+    }
+  }
+}

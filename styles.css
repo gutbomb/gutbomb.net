@@ -157,6 +157,17 @@ h1 {
   background-color: #AFADAF;
 }
 
+.macos-close-inner:active {
+  border: 2px solid black;
+  background-color: #9d9dbe;
+  max-width: 18px;
+  max-height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  margin-left: -2px;
+  margin-top: -2px;
+}
+
 .macos-content {
   padding: 20px 20px 20px 20px;
   margin: 0;
@@ -191,6 +202,11 @@ h1 {
   font-size: 24px;
   color: #000;
   word-spacing: -0.55rem;
+}
+
+.macos-content .email-container input:focus-within, .macos-content textarea:focus-within, .macos-content .email-container input:focus-visible, .macos-content textarea:focus-visible {
+  outline-color: black;
+  border-radius: 0;
 }
 
 .macos-content .button-container {
@@ -262,6 +278,11 @@ h1 {
     2px 4px,
     0px 4px
   );
+}
+
+.macos-content .button-container .button-border button:active {
+  color: white;
+  background-color: black;
 }
 
 .macos-content .button-container .default-border-outer {

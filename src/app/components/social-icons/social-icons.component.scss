@@ -1,0 +1,25 @@
+.social-icons {
+  list-style: none;
+  padding: 0;
+
+  li {
+    .icon-wrapper {
+      width: 30px;
+      text-align: center;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+
+      &:hover {
+        color: rgb(185, 181, 171);
+      }
+    }
+  }
+}
