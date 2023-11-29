@@ -25,6 +25,8 @@ $phone: 768px;
     text-align: left;
 
     li {
+      display: flex;
+      align-items: baseline;
       .icon-wrapper {
         width: 40px;
         text-align: center;
