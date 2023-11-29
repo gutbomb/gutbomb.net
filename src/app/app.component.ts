@@ -16,5 +16,10 @@ export class AppComponent {
 
   toggleMono() {
     this.mono = !this.mono;
+    if (this.mono) {
+      document.body.classList.add('mono');
+    } else {
+      document.body.classList.remove('mono');
+    }
   }
 }

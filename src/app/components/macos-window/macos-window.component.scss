@@ -171,6 +171,7 @@ $phone: 768px;
     font-size: 24px;
     color: #000;
     word-spacing: -0.55rem;
+    text-align: left;
 
     .email-container {
       display: flex;
@@ -188,6 +189,7 @@ $phone: 768px;
         font-size: 24px;
         font-family: 'geneva', sans-serif;
         word-spacing: -0.55rem;
+        border-radius: 0;
 
         &:focus-within, &:focus-visible {
           outline-color: black;
@@ -196,13 +198,15 @@ $phone: 768px;
     }
 
     textarea {
-      width: calc(100% - 8px);
+      width: calc(100% - 10px);
       height: 300px;
       resize: none;
       font-size: 24px;
       border: 2px solid black;
       font-family: 'geneva', sans-serif;
       word-spacing: -0.55rem;
+      padding: 3px;
+      border-radius: 0;
 
       &:focus-within, &:focus-visible {
         outline-color: black;
