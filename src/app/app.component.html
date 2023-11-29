@@ -1,0 +1,14 @@
+<div class="container" [ngClass]="mono ? 'mono' : ''">
+  <div class="content">
+    <h1>GutBomb</h1>
+    <div class="mono-toggle-container" [ngClass]="mono ? 'mono' : ''">
+      <div>Color</div>
+      <button (click)="toggleMono()" [ngClass]="mono ? 'mono' : ''"></button>
+      <div>Monochrome</div>
+    </div>
+    <social-icons [mono]="mono"></social-icons>
+    <macos-window [mono]="mono"></macos-window>
+  </div>
+</div>
+<img src="/assets/gutbombicon.png" alt="Gutbomb Icon" class="icon" *ngIf="!mono">
+<img src="/assets/gutbombiconmono.png" alt="Gutbomb Icon" class="icon" *ngIf="mono">

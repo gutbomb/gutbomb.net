@@ -1,0 +1,49 @@
+<div class="macos-window">
+  <div class="macos-title-bar" [ngClass]="mono ? 'mono' : ''">
+    <div class="macos-title-bar-lines">
+      <div *ngFor="let number of [].constructor(6)" class="macos-title-bar-line" [ngClass]="mono ? 'mono' : ''"></div>
+      <div class="macos-close">
+        <div class="bubble speech" *ngIf="displayBubble">
+          {{bubbleText}}
+        </div>
+        <div class="macos-close-border" [ngClass]="mono ? 'mono' : ''">
+          <div class="macos-close-inner" (mousedown)="closeDown()" (mouseup)="closeUp()" [ngClass]="mono ? 'mono' : ''"></div>
+        </div>
+      </div>
+      <div class="macos-title" [ngClass]="mono ? 'mono' : ''">{{windowTitle}}</div>
+    </div>
+  </div>
+  <div class="macos-content" *ngIf="!messageSent">
+    If you would like to contact me, please send me a message in the box below.<br><br>
+    <form #f="ngForm" (ngSubmit)="send(f)">
+      <div class="email-container"><span>Your Email Address:</span><input type="email" name="emailAddress" [(ngModel)]="emailAddress" #email="ngModel" required email></div>
+      <textarea name="message" [(ngModel)]="message" required></textarea><br><br>
+      <div class="button-container">
+        <div class="spacer"></div>
+        <div class="button-border">
+          <button (click)="clear()">Clear</button>
+        </div>
+        <div class="default-border-outer">
+          <div class="default-border-inner">
+            <div class="button-border">
+              <button>Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="macos-content" *ngIf="messageSent">
+    Your message has been sent.<br><br>
+    <div class="button-container">
+      <div class="spacer"></div>
+      <div class="default-border-outer">
+        <div class="default-border-inner">
+          <div class="button-border">
+            <button (click)="clear()">Send Another?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

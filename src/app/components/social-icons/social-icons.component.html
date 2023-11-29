@@ -1,0 +1,4 @@
+<ul class="social-icons">
+  <!-- Social media icons list -->
+  <li *ngFor="let socialIcon of socialIcons;"><div class="icon-wrapper"><fa-icon [icon]="[socialIcon.icon.library, socialIcon.icon.icon]"></fa-icon></div> <a href="{{socialIcon.url}}" target="_blank" [ngClass]="mono ? 'mono' : ''">{{socialIcon.account}}</a></li>
+</ul>
