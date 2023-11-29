@@ -24,9 +24,9 @@ export class MacosWindowComponent implements OnInit, OnDestroy {
   emailAddress: string = '';
   message: string = '';
   messageSent: boolean = false;
-  displayBubble: boolean = false;
-  bubbleText: string = 'Don\'t be silly';
-  bubbleMessages: any = [
+  displayCloseBubble: boolean = false;
+  closeBubbleText: string = 'Don\'t be silly';
+  closeBubbleMessages: any = [
     'Don\'t be silly.',
     'Why????',
     'What is to be gained???',
@@ -34,12 +34,15 @@ export class MacosWindowComponent implements OnInit, OnDestroy {
     'No.',
     'It will never work, stop trying.'
   ];
+  displayEmailBubble: boolean = false;
+  emailBubbleText: string = '';
+  displayMessageBubble: boolean = false;
+  messageBubbleText: string = 'You didn\'t leave a message!';
   error: string = '';
   public mailSubscription: Subscription = new Subscription;
 
   ngOnInit(): void {
     this.windowTitle = 'Contact Me';
-    console.log(this.mono);
   }
 
   ngOnDestroy(): void {
@@ -47,20 +50,38 @@ export class MacosWindowComponent implements OnInit, OnDestroy {
   }
 
   closeDown() {
-    this.displayBubble = true;
+    this.displayCloseBubble = true;
   }
 
   closeUp() {
-    this.bubbleText = this.bubbleMessages[Math.floor(Math.random() * this.bubbleMessages.length)];
-    this.displayBubble = false;
+    this.closeBubbleText = this.closeBubbleMessages[Math.floor(Math.random() * this.closeBubbleMessages.length)];
+    this.displayCloseBubble = false;
   }
 
   send(f: NgForm) {
     if (f.form.status === 'VALID') {
       this.mailSubscription = this.mailService.send(this.emailAddress, this.message) .subscribe(response => {
         this.messageSent = true;
-      }, error => {this.error = error.error.status})
+      }, error => {
+        console.log(error);
+        this.messageSent = true;
+        this.error = error.message;
+      });
+    } else {
+      console.log(f.form);
+      if (!this.emailAddress) {
+        this.emailBubbleText = 'You didn\'t specify your email address!';
+        this.displayEmailBubble = true;
 
+      } else {
+        if(f.form.controls['emailAddress'].status === 'INVALID') {
+          this.emailBubbleText = 'You didn\'t provide a valid email address!';
+          this.displayEmailBubble = true;
+        }
+      }
+      if (!this.message) {
+        this.displayMessageBubble = true;
+      }
     }
   }
 

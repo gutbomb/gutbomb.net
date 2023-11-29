@@ -3,8 +3,8 @@
     <div class="macos-title-bar-lines">
       <div *ngFor="let number of [].constructor(6)" class="macos-title-bar-line" [ngClass]="mono ? 'mono' : ''"></div>
       <div class="macos-close">
-        <div class="bubble speech" *ngIf="displayBubble">
-          {{bubbleText}}
+        <div class="bubble speech" *ngIf="displayCloseBubble">
+          {{closeBubbleText}}
         </div>
         <div class="macos-close-border" [ngClass]="mono ? 'mono' : ''">
           <div class="macos-close-inner" (mousedown)="closeDown()" (mouseup)="closeUp()" [ngClass]="mono ? 'mono' : ''"></div>
@@ -16,12 +16,21 @@
   <div class="macos-content" *ngIf="!messageSent">
     If you would like to contact me, please send me a message in the box below.<br><br>
     <form #f="ngForm" (ngSubmit)="send(f)">
-      <div class="email-container"><span>Your Email Address:</span><input type="email" name="emailAddress" [(ngModel)]="emailAddress" #email="ngModel" required email></div>
-      <textarea name="message" [(ngModel)]="message" required></textarea><br><br>
+      <div class="email-container"><div class="bubble speech" *ngIf="displayEmailBubble">
+        {{emailBubbleText}}
+      </div>
+      <span>Your Email Address:</span><input type="email" name="emailAddress" (input)="displayEmailBubble=false" [(ngModel)]="emailAddress" #email="ngModel" required email></div>
+      <div class="message-container">
+        <div class="bubble speech" *ngIf="displayMessageBubble">
+          {{messageBubbleText}}
+        </div>
+        <textarea name="message" [(ngModel)]="message" (input)="displayMessageBubble=false" required></textarea><br><br>
+      </div>
+
       <div class="button-container">
         <div class="spacer"></div>
         <div class="button-border">
-          <button (click)="clear()">Clear</button>
+          <button type="button" (click)="clear()">Clear</button>
         </div>
         <div class="default-border-outer">
           <div class="default-border-inner">
@@ -34,13 +43,15 @@
     </form>
   </div>
   <div class="macos-content" *ngIf="messageSent">
-    Your message has been sent.<br><br>
+    <span *ngIf="!error">Your message has been sent.</span>
+    <span *ngIf="error">Your message was not sent because the following error occurred:<br><br>{{error}}</span>
+    <br><br>
     <div class="button-container">
       <div class="spacer"></div>
       <div class="default-border-outer">
         <div class="default-border-inner">
           <div class="button-border">
-            <button (click)="clear()">Send Another?</button>
+            <button (click)="clear()"><span *ngIf="!error">Send Another?</span><span *ngIf="error">Try Again?</span></button>
           </div>
         </div>
       </div>

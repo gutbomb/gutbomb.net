@@ -54,44 +54,8 @@ $phone: 768px;
         background-color: #EFEEF5;
 
         .bubble {
-          position: absolute;
-          width: 300px;
-          text-align: center;
-          line-height: 1.4em;
-          margin: 40px auto;
-          background-color: #fff;
-          border: 8px solid black;
-          border-radius: 30px;
-          padding: 20px;
-          font-size: large;
-          color: black;
-          font-family: 'geneva', sans-serif;
-          font-size: 24px;
           top: -160px;
           left: -27px;
-
-          &:before, &:after {
-            content: ' ';
-            position: absolute;
-            width: 0;
-            height: 0;
-          }
-
-          &.speech {
-            &:before {
-              left: 30px;
-              bottom: -50px;
-              border: 25px solid;
-              border-color: black transparent transparent black;
-            }
-
-            &:after {
-              left: 38px;
-              bottom: -30px;
-              border: 15px solid;
-              border-color: #fff transparent transparent #fff;
-            }
-          }
         }
 
         .macos-close-border {
@@ -174,9 +138,15 @@ $phone: 768px;
     text-align: left;
 
     .email-container {
+      position: relative;
       display: flex;
       margin-bottom: 20px;
       align-items: center;
+
+      .bubble {
+        top: -161px;
+        right: -36px;
+      }
 
       span {
         margin-right: 20px;
@@ -196,22 +166,31 @@ $phone: 768px;
         }
       }
     }
+    .message-container {
+      position: relative;
 
-    textarea {
-      width: calc(100% - 10px);
-      height: 300px;
-      resize: none;
-      font-size: 24px;
-      border: 2px solid black;
-      font-family: 'geneva', sans-serif;
-      word-spacing: -0.55rem;
-      padding: 3px;
-      border-radius: 0;
+      .bubble {
+        top: -56px;
+        right: -39px;
+      }
 
-      &:focus-within, &:focus-visible {
-        outline-color: black;
+      textarea {
+        width: calc(100% - 10px);
+        height: 300px;
+        resize: none;
+        font-size: 24px;
+        border: 2px solid black;
+        font-family: 'geneva', sans-serif;
+        word-spacing: -0.55rem;
+        padding: 3px;
+        border-radius: 0;
+
+        &:focus-within, &:focus-visible {
+          outline-color: black;
+        }
       }
     }
+
 
     .button-container {
       display: flex;
@@ -363,6 +342,46 @@ $phone: 768px;
             0px 6px
           );
         }
+      }
+    }
+  }
+
+  .bubble {
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    line-height: 1.4em;
+    margin: 40px auto;
+    background-color: #fff;
+    border: 8px solid black;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: large;
+    color: black;
+    font-family: 'geneva', sans-serif;
+    font-size: 24px;
+    word-spacing: -0.55rem;
+
+    &:before, &:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    &.speech {
+      &:before {
+        left: 30px;
+        bottom: -50px;
+        border: 25px solid;
+        border-color: black transparent transparent black;
+      }
+
+      &:after {
+        left: 38px;
+        bottom: -30px;
+        border: 15px solid;
+        border-color: #fff transparent transparent #fff;
       }
     }
   }
