@@ -1,4 +1,4 @@
-$phone: 830px;
+$phone: 768px;
 
 .macos-window {
   background-color: white;
@@ -6,6 +6,7 @@ $phone: 830px;
   width: 500px; /* Adjust width as needed */
   margin: 20px 0;
   box-shadow: 2px 2px 0 #000;
+  z-index: 1000;
 
   @media (max-width: 1000px) {
     width: 350px;
