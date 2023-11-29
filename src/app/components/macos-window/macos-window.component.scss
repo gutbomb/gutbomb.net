@@ -25,6 +25,11 @@ $phone: 830px;
     border-right: 2px solid #B0AFC3;
     border-bottom: 2px solid #B0AFC3;
 
+    &.mono {
+      background-color: white;
+      border: 2px solid white;
+    }
+
     .macos-title-bar-lines {
       margin: 4px 0;
       position: relative;
@@ -34,6 +39,10 @@ $phone: 830px;
         width: 100%;
         background-color: #A7A7A5;
         margin-top: 2px;
+
+        &.mono {
+          background-color: black;
+        }
       }
 
       .macos-close {
@@ -42,6 +51,47 @@ $phone: 830px;
         left: 14px;
         padding: 0 2px;
         background-color: #EFEEF5;
+
+        .bubble {
+          position: absolute;
+          width: 300px;
+          text-align: center;
+          line-height: 1.4em;
+          margin: 40px auto;
+          background-color: #fff;
+          border: 8px solid black;
+          border-radius: 30px;
+          padding: 20px;
+          font-size: large;
+          color: black;
+          font-family: 'geneva', sans-serif;
+          font-size: 24px;
+          top: -160px;
+          left: -27px;
+
+          &:before, &:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+          }
+
+          &.speech {
+            &:before {
+              left: 30px;
+              bottom: -50px;
+              border: 25px solid;
+              border-color: black transparent transparent black;
+            }
+
+            &:after {
+              left: 38px;
+              bottom: -30px;
+              border: 15px solid;
+              border-color: #fff transparent transparent #fff;
+            }
+          }
+        }
 
         .macos-close-border {
           min-width: 18px;
@@ -52,6 +102,11 @@ $phone: 830px;
           border-top: 2px solid #3E3E5B;
           border-right: 2px solid #D6D4E9;
           border-bottom: 2px solid #D6D4E9;
+
+          &.mono {
+            border: 2px solid black;
+            background-color: white;
+          }
 
           .macos-close-inner {
             min-width: 14px;
@@ -64,6 +119,11 @@ $phone: 830px;
             border-top: 2px solid #D6D4E9;
             background-color: #AFADAF;
 
+            &.mono {
+              background-color: white;
+              border: 2px solid white;
+            }
+
             &:active {
               border: 2px solid black;
               background-color: #9d9dbe;
@@ -73,6 +133,10 @@ $phone: 830px;
               min-height: 18px;
               margin-left: -2px;
               margin-top: -2px;
+
+              &.mono {
+                background-color: white;
+              }
             }
           }
         }
@@ -90,6 +154,10 @@ $phone: 830px;
         transform: translateX(-50%);
         background-color: #EFEEF5;
         white-space: nowrap;
+
+        &.mono {
+          background-color: white;
+        }
       }
     }
   }

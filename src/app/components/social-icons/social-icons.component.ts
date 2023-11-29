@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -16,7 +16,7 @@ export class SocialIconsComponent implements OnInit{
     library.addIconPacks(fas);
     library.addIconPacks(fab);
   }
-
+  @Input() mono!: boolean;
   public socialIcons: any = [];
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-$phone: 830px;
+$phone: 900px;
 
 @font-face {
   font-family: 'chicago';
@@ -26,14 +26,22 @@ body {
   .container {
     position: relative;
     padding: 20px 20px 20px 40px;
+    height: 100vh;
+
+    &.mono {
+      background-color: white;
+      background-image: url("/assets/monobg.png");
+      color: black;
+    }
 
     @media (max-width: $phone) {
       padding: 20px;
     }
 
     .content {
-      @media (max-width: 830px) {
-        padding-top: 150px; /* Adjust the top padding to create space below the image */
+      @media (max-width: $phone) {
+        padding-top: 150px;
+        text-align: center;
       }
 
       h1 {
@@ -41,6 +49,45 @@ body {
 
         @media (max-width: $phone) {
           text-align: center; /* Center the h1 on mobile */
+        }
+      }
+
+      .mono-toggle-container {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgb(185, 181, 171);
+        color: black;
+
+        @media (max-width: $phone) {
+          top: initial;
+          right: initial;
+          position: initial;
+        }
+
+        &.mono {
+          background: white;
+        }
+
+        button {
+          margin: 0 20px;
+          min-width: 50px;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+          border-right: 1px solid black;
+          border-left: 20px solid black;
+
+          &.mono {
+            border-left: 1px solid black;
+            border-right: 20px solid black;
+          }
+
+          @media (max-width: $phone) {
+            flex: 1;
+          }
         }
       }
     }

@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SocialIconsComponent } from './components/social-icons/social-icons.component';
 import { MacosWindowComponent } from './components/macos-window/macos-window.component';
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,4 +12,9 @@ import { MacosWindowComponent } from './components/macos-window/macos-window.com
 })
 export class AppComponent {
   title = 'gutbomb.net';
+  public mono: boolean = false;
+
+  toggleMono() {
+    this.mono = !this.mono;
+  }
 }

@@ -1,14 +1,16 @@
 <div class="macos-window">
-  <div class="macos-title-bar">
+  <div class="macos-title-bar" [ngClass]="mono ? 'mono' : ''">
     <div class="macos-title-bar-lines">
-      <div class="macos-title-bar-line"></div>
-      <div class="macos-title-bar-line"></div>
-      <div class="macos-title-bar-line"></div>
-      <div class="macos-title-bar-line"></div>
-      <div class="macos-title-bar-line"></div>
-      <div class="macos-title-bar-line"></div>
-      <div class="macos-close"><div class="macos-close-border"><div class="macos-close-inner" (click)="closeClick()"></div></div></div>
-      <div class="macos-title">{{windowTitle}}</div>
+      <div *ngFor="let number of [].constructor(6)" class="macos-title-bar-line" [ngClass]="mono ? 'mono' : ''"></div>
+      <div class="macos-close">
+        <div class="bubble speech" *ngIf="displayBubble">
+          {{bubbleText}}
+        </div>
+        <div class="macos-close-border" [ngClass]="mono ? 'mono' : ''">
+          <div class="macos-close-inner" (mousedown)="closeDown()" (mouseup)="closeUp()" [ngClass]="mono ? 'mono' : ''"></div>
+        </div>
+      </div>
+      <div class="macos-title" [ngClass]="mono ? 'mono' : ''">{{windowTitle}}</div>
     </div>
   </div>
   <div class="macos-content" *ngIf="!messageSent">

@@ -1,13 +1,18 @@
 .social-icons {
   list-style: none;
   padding: 0;
+  text-align: left;
 
   li {
     .icon-wrapper {
-      width: 30px;
+      width: 40px;
       text-align: center;
       margin: 0;
       display: inline-block;
+
+      fa-icon {
+        font-size: 24px;
+      }
     }
 
     a {
@@ -15,10 +20,19 @@
       vertical-align: middle;
       color: white;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 20px;
+
+      &.mono {
+        color: black;
+      }
 
       &:hover {
         color: rgb(185, 181, 171);
+
+        &.mono {
+          color: black;
+          text-decoration: underline;
+        }
       }
     }
   }
