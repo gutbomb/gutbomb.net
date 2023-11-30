@@ -57,8 +57,8 @@ export class SocialIconsComponent implements OnInit{
           icon: 'youtube'
         }
       }, {
-        account: '@GutBomb_287681',
-        url: 'https://printables.com/@GutBomb_287681',
+        account: '@GutBomb',
+        url: 'https://printables.com/@GutBomb',
         icon: {
           library: 'fas',
           icon: 'cube'
