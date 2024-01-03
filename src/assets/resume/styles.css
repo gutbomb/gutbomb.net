@@ -439,6 +439,12 @@ h1 {
   );
 }
 
+.source-link {
+  font-family: 'geneva';
+  word-spacing: -0.55rem;
+  font-size: 1.25rem;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 1200px) {
   .icon {
@@ -496,7 +502,7 @@ h1 {
   }
 }
 
-@media print and (max-width: 830px) {
+@media print {
   .container {
     padding: 20px;
   }
@@ -531,5 +537,10 @@ h1 {
 
   .macos-window.experience {
     margin-bottom: 0;
+  }
+
+  .source-link {
+    display: none;
+    margin: 0;
   }
 }
