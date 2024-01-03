@@ -21,8 +21,8 @@ body {
 
 @font-face {
   font-family: 'geneva';
-  src: url('geneva-9.woff') format('woff');
-  src: url('geneva-9.woff2') format('woff2');
+  src: url('Geneva-9.woff') format('woff');
+  src: url('Geneva-9.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
