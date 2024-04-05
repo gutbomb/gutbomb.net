@@ -1,17 +1,17 @@
 $phone: 768px;
 
 @font-face {
-  font-family: 'chicago';
-  src: url('/assets/pixChicago.woff') format('woff');
-  src: url('/assets/pixChicago.woff2') format('woff2');
+  font-family: "chicago";
+  src: url("/assets/pixChicago.woff") format("woff");
+  src: url("/assets/pixChicago.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'geneva';
-  src: url('/assets/Geneva-9.woff') format('woff');
-  src: url('/assets/Geneva-9.woff2') format('woff2');
+  font-family: "geneva";
+  src: url("/assets/Geneva-9.woff") format("woff");
+  src: url("/assets/Geneva-9.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(255, 95, 0);
-  font-family: 'chicago', sans-serif;
+  font-family: "chicago", sans-serif;
   color: white;
 
   &.mono {
@@ -76,7 +76,7 @@ body {
           flex: 1;
           width: 150px;
           height: 20px;
-          font-family: 'chicago', sans-serif;
+          font-family: "chicago", sans-serif;
           font-size: 10px;
           line-height: 20px;
           text-align: center;

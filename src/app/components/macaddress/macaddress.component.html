@@ -1,0 +1,63 @@
+<div class="macos-window">
+  <div class="macos-title-bar" [ngClass]="mono ? 'mono' : ''">
+    <div class="macos-title-bar-lines">
+      <div
+        *ngFor="let number of [].constructor(6)"
+        class="macos-title-bar-line"
+        [ngClass]="mono ? 'mono' : ''"
+      ></div>
+      <div class="macos-close">
+        <div class="bubble speech" *ngIf="displayCloseBubble">
+          {{ closeBubbleText }}
+        </div>
+        <div class="macos-close-border" [ngClass]="mono ? 'mono' : ''">
+          <div
+            class="macos-close-inner"
+            (mousedown)="closeDown()"
+            (mouseup)="closeUp()"
+            [ngClass]="mono ? 'mono' : ''"
+          ></div>
+        </div>
+      </div>
+      <div class="macos-title" [ngClass]="mono ? 'mono' : ''">
+        Mac Address Tool
+      </div>
+    </div>
+  </div>
+  <div class="macos-content">
+    <form #f="ngForm" (ngSubmit)="getPassword(f)">
+      <div class="email-container">
+        <div class="bubble speech" *ngIf="displayErrorBubble">
+          {{ errorBubbleText }}
+        </div>
+        <span>MAC Address (12 digits):</span
+        ><input
+          type="text"
+          name="macAddress"
+          (input)="displayErrorBubble = false"
+          [(ngModel)]="macAddress"
+          required
+          macAddress
+          maxlength="12"
+        />
+      </div>
+      <div>
+        <pre>{{ password?.password }}</pre>
+        <pre>{{ error?.status }}</pre>
+      </div>
+      <div class="button-container">
+        <div class="spacer"></div>
+        <div class="button-border">
+          <button type="button" (click)="clear()">Clear</button>
+        </div>
+        <div class="default-border-outer">
+          <div class="default-border-inner">
+            <div class="button-border">
+              <button>Get Password</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
