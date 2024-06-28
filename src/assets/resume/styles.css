@@ -46,6 +46,11 @@ h1 {
   margin-top: -10px;
 }
 
+.hidden-text {
+  color: white;
+  font-size: 1px;
+}
+
 /* Main container */
 .container {
   position: relative;
