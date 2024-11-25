@@ -54,7 +54,7 @@ export class SocialIconsComponent implements OnInit{
         url: 'https://bsky.app/profile/gutbomb.net',
         icon: {
           library: 'fab',
-          icon: 'fa-bluesky'
+          icon: 'bluesky'
         }
       }, {
         account: '@gutbomb',
