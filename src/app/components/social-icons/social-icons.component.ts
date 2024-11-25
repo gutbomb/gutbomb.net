@@ -53,8 +53,8 @@ export class SocialIconsComponent implements OnInit{
         account: '@gutbomb.net',
         url: 'https://bsky.app/profile/gutbomb.net',
         icon: {
-          library: 'fas',
-          icon: 'cloud'
+          library: 'fab',
+          icon: 'fa-bluesky'
         }
       }, {
         account: '@gutbomb',
