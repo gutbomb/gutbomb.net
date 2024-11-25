@@ -50,8 +50,8 @@ export class SocialIconsComponent implements OnInit{
           icon: 'mastodon'
         }
       }, {
-        account: '@gutbomb',
-        url: 'https://bsky.app/profile/gutbomb.bsky.social',
+        account: '@gutbomb.net',
+        url: 'https://bsky.app/profile/gutbomb.net',
         icon: {
           library: 'fas',
           icon: 'cloud'
