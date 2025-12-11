@@ -22,13 +22,6 @@ export class SocialIconsComponent implements OnInit{
   ngOnInit(): void {
     this.socialIcons = [
       {
-        account: 'My Resume',
-        url: '/assets/resume/index.html',
-        icon: {
-          library: 'fas',
-          icon: 'building'
-        }
-      }, {
         account: '@GutBombTech',
         url: 'https://youtube.com/@GutBombTech',
         icon: {
