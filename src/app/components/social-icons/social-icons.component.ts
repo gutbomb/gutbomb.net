@@ -29,6 +29,13 @@ export class SocialIconsComponent implements OnInit{
           icon: 'youtube'
         }
       }, {
+        account: '@GutBombTech',
+        url: 'https://www.patreon.com/GutBombTech',
+        icon: {
+          library: 'fab',
+          icon: 'patreon'
+        }
+      }, {
         account: '@gutbomb',
         url: 'https://twitter.com/gutbomb',
         icon: {
